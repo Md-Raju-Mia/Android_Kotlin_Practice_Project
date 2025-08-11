@@ -7,6 +7,8 @@ import androidx.lifecycle.viewModelScope
 
 class JobsViewModel(private val jobRepository: JobRepository) : ViewModel() {
 
+    val assignedDefectList = jobRepository.assignedDefectList
+
     fun fetchAssignedDefectList(mechanicPin: String) {
         viewModelScope.launch {
             jobRepository.fetchAssignedDefectList(mechanicPin)

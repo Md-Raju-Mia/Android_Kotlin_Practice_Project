@@ -56,6 +56,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // koin for dependency injection
+    implementation(libs.koin.android)
+
 
     // retrofit for network calls & gson for json parsing
     implementation (libs.retrofit)
