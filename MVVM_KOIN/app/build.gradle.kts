@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -58,6 +59,7 @@ dependencies {
 
     // koin for dependency injection
     implementation(libs.koin.android)
+    implementation(libs.koin.core)
 
 
     // retrofit for network calls & gson for json parsing

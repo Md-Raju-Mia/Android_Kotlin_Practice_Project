@@ -28,6 +28,18 @@ class AssignedDefect : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
+        assignedDefectAdapter = AssignedDefectAdapter(
+            mutableListOf(),
+            object : AssignedDefectAdapter.OnAssignedDefectClickListener {
+                override fun onAssignedDefectClick(item: AssignedDefectResponseItem) {
+                    // Handle click here
+                }
+            }
+        )
+
+        binding.recyclerViewAssignedDefect.adapter = assignedDefectAdapter
+
         jobsViewModel.fetchAssignedDefectList("4245")
 
 
@@ -43,6 +55,13 @@ class AssignedDefect : AppCompatActivity() {
                 }
             }
         }
+
+       /* // Observe data
+        jobsViewModel.assignedDefectList.observe(this) { response ->
+            response?.response?.let { list ->
+                assignedDefectAdapter.updateList(list)
+            }
+        }*/
 
 
     }
